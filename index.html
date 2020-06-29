@@ -6,6 +6,7 @@
         <title>Abhinav's Portfolio</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
 
         <!-- Update these with your own fonts -->
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
@@ -25,7 +26,11 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
 
-
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+        <script src="semantic/dist/semantic.min.js"></script>
 
     </head>
     <body>
@@ -52,9 +57,12 @@
             <h1 class="section__title section__title--intro">
                 Hi, I am <strong>Abhinav Prakash</strong>
             </h1>
-            <p class="section__subtitle section__subtitle--intro">Not Just another developer</p>
+            <p class="section__subtitle section__subtitle--intro">Software Developer</p>
             <img src="img/profile1.JPG" alt="a picture of Abhinav" class="intro__img">
+
         </section>
+
+
 
 
         <!-- My services -->
@@ -62,22 +70,24 @@
             <h2 class="section__title section__title--services">What I do</h2>
             <div class="services">
                 <div class="service">
-                    <h3>Design + Development</h3>
+                    <h3>Competitive Programmer</h3>
+                    <p>Applying data-Structures and algorithms to solve problems over different Online judges. I am 3 star coder at codechef, specialist in codeforces and achieved a global rank of 2719 in Google Kickstart round C. I use C++ as my native programming language with of knowledge of Java and Python.</p>
+                </div> <!-- / service -->
+
+                <div class="service">
+                    <h3>Web Developer</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div> <!-- / service -->
 
                 <div class="service">
-                    <h3>E-Commerce</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div> <!-- / service -->
-
-                <div class="service">
-                    <h3>WordPress</h3>
+                    <h3>Flutter Developer</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div> <!-- / service -->
             </div> <!-- / services -->
 
             <a href="#work" class="btn">My Work</a>
+            <a href="https://drive.google.com/file/d/1A0sdTjr467SHGnHwyf8jCPQeV8QGEtQ6/view?usp=sharing" class="btn"> <i class="fas fa-file"></i>My Resume</a>
+
         </section>
 
 
@@ -91,7 +101,7 @@
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
            </div>
 
-           <img src="img/dev-jane-02.jpg" alt="Jane leaning against a bus" class="about-me__img">
+           <img src="img/profile2.JPG" alt="profile pic 2 of abhinav" class="about-me__img">
         </section>
 
         <!-- My Work -->
@@ -99,57 +109,44 @@
             <h2 class="section__title section__title--work">My work</h2>
             <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
 
-            <div class="portfolio">
-                <!-- Portfolio item 01 -->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/portfolio-01.jpg" alt="" class="portfolio__img">
-                </a>
+            <div id="myprojects" style="background:#303030;">
+      <div class="container p-5 ">
+      <div class="d-flex flex-wrap project_cards justify-content-around p-1">
+        <div class="card  my-3" style="width: 18rem;">
+          <div class="image-div">
+        <img class="card-img-top" src="https://i.pinimg.com/originals/5c/00/4a/5c004ace26d1c17cb56ed851a2aef602.jpg" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h4 style="text-align:center;">
+            <a href="github.com">Airline Reservation System</a></h4>
+          <p class="card-text" style="text-align:justify">I made a fully flexible ARS for both admin and user side using html,css,bootstrap,mysql and php for my college project. The user can create an account and book flight tickets while the admin can access the database and add/remove flight data. It is also responsive (mobile friendly).</p>
+        </div>
+      </div>
+        <div class="card my-3 " style="width: 18rem;">
+          <div class="image-div">
+        <img class="card-img-top" src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,g=0.5x0.5,f=auto/85535e05d1f130b16751c8308cfbb19b.png" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h4 style="text-align:center;">
+              <a href="github.com">Airline Reservation System</a></h4>
+            <p class="card-text" style="text-align:justify">I made a fully flexible ARS for both admin and user side using html,css,bootstrap,mysql and php for my college project. The user can create an account and book flight tickets while the admin can access the database and add/remove flight data. It is also responsive (mobile friendly).</p>
+          </div>
+      </div>
+      <div class="card my-3" style="width: 18rem;">
+        <div class="image-div">
+      <img class="card-img-top" src="https://i.morioh.com/a82c5f3532.png" alt="Card image cap">
+      </div>
+      <div class="card-body">
+        <h4 style="text-align:center;">
+          <a href="github.com">Airline Reservation System</a></h4>
+        <p class="card-text" style="text-align:justify">I made a fully flexible ARS for both admin and user side using html,css,bootstrap,mysql and php for my college project. The user can create an account and book flight tickets while the admin can access the database and add/remove flight data. It is also responsive (mobile friendly).</p>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <a href="https://github.com/abhinavprkash" class="btn">More on Github</a>
 
-                <!-- Portfolio item 02 -->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/portfolio-02.jpg" alt="" class="portfolio__img">
-                </a>
-
-                <!-- Portfolio item 03 -->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/portfolio-03.jpg" alt="" class="portfolio__img">
-                </a>
-
-                <!-- Portfolio item 04 -->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/portfolio-04.jpg" alt="" class="portfolio__img">
-                </a>
-
-                <!-- Portfolio item 05 -->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/portfolio-05.jpg" alt="" class="portfolio__img">
-                </a>
-
-                <!-- Portfolio item 06 -->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/portfolio-06.jpg" alt="" class="portfolio__img">
-                </a>
-
-                <!-- Portfolio item 07 -->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/portfolio-07.jpg" alt="" class="portfolio__img">
-                </a>
-
-                <!-- Portfolio item 08 -->
-                <a href="#" class="portfolio__item">
-                    <img src="img/portfolio-08.jpg" alt="" class="portfolio__img">
-                </a>
-
-                <!-- Portfolio item 09 -->
-                <a href="#" class="portfolio__item">
-                    <img src="img/portfolio-09.jpg" alt="" class="portfolio__img">
-                </a>
-
-                <!-- Portfolio item 0 0-->
-                <a href="#" class="portfolio__item">
-                    <img src="img/portfolio-10.jpg" alt="" class="portfolio__img">
-                </a>
-            </div>
         </section>
 
         <!-- Section: Testimonials v.1 -->
@@ -504,26 +501,26 @@
         <!-- Footer -->
         <footer class="footer">
             <!-- replace with your own email address -->
-            <a href="mailto:hello@jane.dev" class="footer__link">hello@jane.dev</a>
+            <a href="mailto:abhip13th@gmail.com" class="footer__link">abhip13th@gmail.com</a>
             <ul class="social-list">
                 <li class="social-list__item">
-                    <a class="social-list__link" href="https://codepen.io">
-                        <i class="fab fa-codepen"></i>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a class="social-list__link" href="http://dribbble.com">
-                        <i class="fab fa-dribbble"></i>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://twitter.com">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://github.com">
+                    <a class="social-list__link" href="https://github.com/abhinavprkash">
                         <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/itsmeabhinavprakash/">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.facebook.com/abhinav.prakash.372/">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.instagram.com/abhinavprkash1/">
+                        <i class="fab fa-instagram"></i>
                     </a>
                 </li>
             </ul>
