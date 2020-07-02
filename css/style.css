@@ -1,5 +1,6 @@
 @import "footer.css";
 @import "button.css";
+@import "client.css";
 *,
 *::before,
 *::after {
@@ -17,7 +18,7 @@
 
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #16e0bd;
+    --clr-accent: #169ee0;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
