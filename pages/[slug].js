@@ -11,11 +11,11 @@ function Post(props) {
 
   const title = `${props.title} // Parth Desai`
   const description = props.description || ''
-  const url = `https://parthdesai.site/${props.slug}`
+  const url = `https://abhinavprakash.me/${props.slug}`
   const date = new Date(props.date).toISOString()
   const image = props.image
-    ? `https://parthdesai.site${props.image}`
-    : 'https://parthdesai.site/static/images/home-opt.jpg'
+    ? `https://abhinavprakash.me${props.image}`
+    : 'https://abhinavprakash.me/static/images/home-opt.jpg'
 
   return (
     <>
@@ -64,7 +64,7 @@ export async function getStaticProps({ params }) {
     const content = await convertMarkdownToHtml(post.content || '')
 
     const isProd = process.env.NODE_ENV === 'production'
-    const base = isProd ? 'https://www.parthdesai.site' : 'http://localhost:3000'
+    const base = isProd ? 'https://www.abhinavprakash.me' : 'http://localhost:3000'
 
     if (isProd) {
       const viewsReq = await fetch(`${base}/api/views/${params.slug}`)

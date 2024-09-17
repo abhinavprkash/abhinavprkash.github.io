@@ -38,8 +38,8 @@ function Credits(props) {
         <meta content={title} property="og:title" />
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
-        <meta content="https://parthdesai.site/credits" property="og:url" />
-        <meta content={`https://parthdesai.site${image}`} property="og:image" />
+        <meta content="https://abhinavprakash.me/credits" property="og:url" />
+        <meta content={`https://abhinavprakash.me${image}`} property="og:image" />
       </Head>
       <p dangerouslySetInnerHTML={{ __html: description }} />
       <hr style={{ border: '0.5px solid white', margin: '20px 0' }} />

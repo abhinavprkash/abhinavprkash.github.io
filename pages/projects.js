@@ -73,8 +73,8 @@ function Projects(props) {
         <meta content={title} property="og:title" />
         <meta content={stripHtml(description)} name="description" />
         <meta content={stripHtml(description)} property="og:description" />
-        <meta content="https://parthdesai.site/projects" property="og:url" />
-        <meta content={`https://parthdesai.site${image}`} property="og:image" />
+        <meta content="https://abhinavprakash.me/projects" property="og:url" />
+        <meta content={`https://abhinavprakash.me${image}`} property="og:image" />
       </Head>
 
       <AnimateSharedLayout>

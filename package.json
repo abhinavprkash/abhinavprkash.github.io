@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "parthdesai.site",
+  "name": "abhinavprakash.me",
   "version": "5.0.0",
   "scripts": {
     "dev": "next dev",
@@ -37,6 +37,7 @@
   "devDependencies": {
     "eslint": "^8.9.0",
     "eslint-config-next": "^12.0.10",
-    "eslint-config-prettier": "^8.3.0"
+    "eslint-config-prettier": "^8.3.0",
+    "gh-pages": "^6.1.1"
   }
 }
