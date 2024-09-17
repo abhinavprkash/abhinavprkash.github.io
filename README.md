@@ -2,7 +2,6 @@
 
 > My personal website
 
-> This website has been forked from [Zeno Rocha's website](https://github.com/zenorocha/zenorocha.com/tree/main)
 
 ## Technology stack
 
