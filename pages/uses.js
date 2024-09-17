@@ -6,7 +6,7 @@ import stripHtml from '../lib/strip-html'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Uses // Parth Desai',
+    title: 'Uses // Abhinav Prakash',
     description:
       "This is a comprehensive list of all the <strong>software or hardware</strong> that I use daily along with my dotfiles configurations.",
     tagline: 'Tools. Apps. Gear.',

@@ -16,7 +16,7 @@ export default class extends Document {
       <Html lang={lang ? lang : 'en-US'}>
         <Head>
           <meta charSet="utf-8" />
-          <meta content="Parth Desai" name="author" />
+          <meta content="Abhinav Prakash" name="author" />
           <meta property="og:type" content="website" />
           <meta content="summary_large_image" name="twitter:card" />
           <meta name="theme-color" content="#08070b" />

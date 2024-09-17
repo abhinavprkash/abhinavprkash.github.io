@@ -39,7 +39,14 @@ export default function Index(props) {
       <Navbar />
       <Home>
         <PostContent>
-          <PostContainer>
+          {/* <PostContainer>
+            <div>
+            <img
+              alt="Abhinav Prakash"
+              src="/static/images/home-opt.jpg"
+              style={{ width: '40%', borderRadius: 8 }}
+            />
+            </div>
             <div>
               <h1>{title}</h1>
               <p>
@@ -50,7 +57,28 @@ export default function Index(props) {
               </p>
               <ShortcutHome />
             </div>
-          </PostContainer>
+          </PostContainer> */}
+          <PostContainer style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+  <div style={{ flex: '1', textAlign: 'left' }}>
+    <img
+      alt="Abhinav Prakash"
+      src="/static/images/home-opt.jpg"
+      style={{ width: '30%', borderRadius: 8 }}
+    />
+  </div>
+  <div style={{ flex: '0.2', textAlign: 'left' }}></div>
+  <div style={{ flex: '1', textAlign: 'left' }}>
+    <h1>{title}</h1>
+    <p>
+      <strong>Master's in Computer Science at{' '}
+        <a href="https://usc.edu" target="_blank">University of Southern California</a>
+      </strong><br />
+      {description}
+    </p>
+    <ShortcutHome />
+  </div>
+</PostContainer>
+
         </PostContent>
       </Home>
       <Footer />

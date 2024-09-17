@@ -9,7 +9,7 @@ import stripHtml from '../lib/strip-html'
 
 export async function getStaticProps() {
   const meta = {
-    title: 'Projects // Parth Desai',
+    title: 'Projects // Abhinav Prakash',
     tagline: 'Work. Hobby. Open Source.',
     image: '/static/images/projects-bw.jpg',
     primaryColor: 'cyan',
