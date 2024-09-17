@@ -1,289 +1,66 @@
-import Link from '@/components/Link'
-import { PageSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import formatDate from '@/lib/utils/formatDate'
-import { RoughNotation } from 'react-rough-notation'
-import ViewCounter from '@/components/ViewCounter'
-
-const MAX_DISPLAY = 3
+import Head from 'next/head'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+import { PostContainer, PostContent, PostMain } from '../components/Post'
+import ShortcutHome from '../components/ShortcutHome'
+import { Wrapper } from '../components/Wrapper'
+import { getPersonJsonLd } from '../lib/json-ld'
+import { styled } from '../stitches.config'
 
 export async function getStaticProps() {
-  const posts = [
-    {
-      slug: 'how-to-prepare-for-job-placement-as-an-indian-student',
-      date: '2023-09-10',
-      title:
-        'How to Prepare for Job Placement as an Indian Student and Not Cry Yourself to Sleep Every Night',
-      summary:
-        'A guide to help Indian students prepare for job placements with minimal stress...',
-      tags: ['Job Preparation', 'India', 'Students'],
-      link: 'https://compilex.medium.com/how-to-prepare-for-job-placement-as-an-indian-student-and-not-cry-yourself-to-sleep-every-night-aa5050443c7',
+  return {
+    props: {
+      title: 'Abhinav Prakash',
+      description: 'Software Engineer, Yup I know we are building our replacement.',
     },
-    {
-      slug: 'mastering-binary-search',
-      date: '2023-08-25',
-      title:
-        'Mastering Binary Search: The Art of Efficient Searching and Problem Solving',
-      summary:
-        'In-depth insights into binary search, its uses, and problem-solving techniques...',
-      tags: ['Binary Search', 'Algorithms'],
-      link: 'https://compilex.medium.com/mastering-binary-search-the-art-of-efficient-searching-and-problem-solving-49e0d5034a1d',
-    },
-    {
-      slug: 'a-cinematic-journey-through-binary-trees',
-      date: '2023-08-18',
-      title: 'A Cinematic Journey Through Binary Trees',
-      summary:
-        'An engaging and creative approach to understanding binary trees...',
-      tags: ['Binary Trees', 'Data Structures'],
-      link: 'https://compilex.medium.com/a-cinematic-journey-through-binary-trees-74f993eece1c',
-    },
-  ]
-
-  return { props: { posts } }
+  }
 }
 
-export default function Home({ posts }) {
+export default function Index(props) {
+  const { title, description, image } = props
+
   return (
-    <>
-      <PageSEO
-        title={siteMetadata.title}
-        description={siteMetadata.description}
-      />
-      <div>
-        <div className="mb-12 flex flex-col items-center gap-x-12 xl:flex-row">
-          <div className="pt-6">
-            <h1 className="pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-              Hi, I am{' '}
-              <span className="text-primary-color-500 dark:text-primary-color-dark-500">
-                Abhinav
-              </span>
-            </h1>
-            <h2 className="prose pt-5 text-lg text-gray-600 dark:text-gray-300">
-              {`Welcome to ${siteMetadata.description}. I am a Software Developer pursuing Master's in Computer Science at the University of Southern California and this is my personal Portfolio. I like problem solving and building `}
-              side projects and learning new technologies.
-            </h2>
-            <p className="pt-5 text-lg leading-7 text-slate-600 dark:text-slate-300 sm:block md:hidden lg:hidden">
-              This is my place for{' '}
-              <RoughNotation
-                animate={true}
-                type="box"
-                show={true}
-                color="#DE1D8D"
-                animationDelay={1000}
-                animationDuration={2500}
-                className="text-slate-200"
-              >
-                thoughts, reflections & everything&nbsp;
-              </RoughNotation>
-              in between. Have a good read!
-            </p>
-            <p className="hidden pt-10 text-lg leading-7 text-slate-600 dark:text-slate-300 md:block">
-              This is my place for{' '}
-              <RoughNotation
-                animate={true}
-                type="highlight"
-                show={true}
-                color="#DE1D8D"
-                animationDelay={1000}
-                animationDuration={2500}
-                className="text-slate-200"
-              >
-                thoughts, reflections & everything&nbsp;
-              </RoughNotation>
-              in between. Have a good read!{' '}
-              <div className="mt-8 text-slate-600 dark:text-slate-400">
-                <span className="text-sm">Press</span>{' '}
-                <span className="rounded-md bg-gray-300 p-1 text-sm text-gray-900 dark:bg-gray-400">
-                  ⌘
-                </span>{' '}
-                <span className="text-sm">+ </span>
-                <span className="rounded-md bg-gray-300 p-1 text-sm text-gray-900 dark:bg-gray-400">
-                  K
-                </span>{' '}
-                <span className="text-sm">to start</span>
-              </div>
-            </p>
-          </div>
-          {/* Subsections */}
-          <div className="flex items-center justify-center">
-            <div className="grid grid-cols-1 grid-rows-3 gap-8 py-12">
-              {/* What I built */}
-              <div className="my-2 grid items-start gap-8">
-                <div className="group relative">
-                  <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="/projects">
-                    <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
-                      <span className="flex items-center space-x-5">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6 -rotate-6 text-green-600"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                          />
-                        </svg>
-                        <span className="pr-6 text-gray-900 dark:text-gray-100">
-                          What I built
-                        </span>
-                      </span>
-                      <span className="pl-6 text-amber-400 transition duration-200 group-hover:text-gray-900 dark:group-hover:text-gray-100">
-                        Projects&nbsp;&rarr;
-                      </span>
-                    </span>
-                  </Link>
-                </div>
-              </div>
-              {/* Read my story */}
-              <div className="my-2 grid items-start gap-8">
-                <div className="group relative">
-                  <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-fuchsia-600 to-emerald-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="https://www.linkedin.com/in/itsmeabhinavprakash/">
-                    <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
-                      <span className="flex items-center space-x-5">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6 -rotate-6 text-pink-600"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                          />
-                        </svg>
-                        <span className="pr-6 text-gray-900 dark:text-gray-100">
-                          Read my story
-                        </span>
-                      </span>
-                      <span className="pl-6 text-indigo-400 transition duration-200 group-hover:text-gray-900 dark:group-hover:text-gray-100">
-                        Website&nbsp;&rarr;
-                      </span>
-                    </span>
-                  </Link>
-                </div>
-              </div>
-              {/* Hire me */}
-              <div className="my-2 grid items-start gap-8">
-                <div className="group relative">
-                  <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
-                  <Link href="https://drive.google.com/file/d/1DJXCQO69VcBAI3k3E1h3BXNsFF4E6jkW/view?usp=sharing">
-                    <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
-                      <span className="flex items-center space-x-5">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6 -rotate-6 text-fuchsia-600"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                          />
-                        </svg>
-                        <span className="pr-6 text-gray-900 dark:text-gray-100">
-                          Hire me!&nbsp;&nbsp;&nbsp;
-                        </span>
-                      </span>
-                      <span className="pl-6 text-primary-400 transition duration-200 group-hover:text-gray-900 dark:group-hover:text-gray-100">
-                        Resume&nbsp;&rarr;
-                      </span>
-                    </span>
-                  </Link>
-                </div>
-              </div>
+    <Wrapper>
+      <Head>
+        <title>{title}</title>
+        <meta content={title} property="og:title" />
+        <meta content={description} name="description" />
+        <meta content={description} property="og:description" />
+        <meta content="https://abhinavprkash.vercel.app/" property="og:url" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getPersonJsonLd())
+          }}
+          key="person-jsonld"
+        />
+      </Head>
+
+      <Navbar />
+      <Home>
+        <PostContent>
+          <PostContainer>
+            <div>
+              <h1>{title}</h1>
+              <p>
+                <strong>Ex-Software Engineer at{' '}
+                  <a href="https://optum.com" target="blank">Optum</a>
+                </strong><br />
+                {description}
+              </p>
+              <ShortcutHome />
             </div>
-          </div>
-        </div>
-        {/* Blog Section */}
-        <h2 className="flex pb-6 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl md:text-5xl">
-          Latest
-        </h2>
-        <hr className="border-gray-200 dark:border-gray-700" />
-        <ul>
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary, tags, link } = frontMatter
-            return (
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={slug}
-                className="group flex bg-transparent bg-opacity-20 px-2 transition duration-100 hover:scale-105 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
-                <li className="py-6">
-                  <article>
-                    <div className="space-y-2 bg-transparent bg-opacity-20 p-2 transition duration-200 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
-                          <time dateTime={date}>{formatDate(date)}</time>
-                          {' • '}
-                          <ViewCounter className="mx-1" slug={slug} />
-                          views
-                        </dd>
-                      </dl>
-                      <div className="space-y-5 xl:col-span-4">
-                        <div className="space-y-1">
-                          <div>
-                            <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                              <a
-                                href={link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-900 transition duration-500 ease-in-out hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-500"
-                              >
-                                {title}
-                              </a>
-                            </h2>
-                          </div>
-                          <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
-                          <div className="prose max-w-none pt-5 text-gray-500 dark:text-gray-400">
-                            {summary}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </li>
-              </a>
-            )
-          })}
-        </ul>
-      </div>
-      {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end pt-5 text-lg font-normal leading-6">
-          <a
-            href="https://compilex.medium.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="special-underline-new text-primary-500 hover:text-gray-100 hover:no-underline dark:text-primary-500 hover:dark:text-gray-100"
-            aria-label="all posts"
-          >
-            All Posts &rarr;
-          </a>
-        </div>
-      )}
-    </>
+          </PostContainer>
+        </PostContent>
+      </Home>
+      <Footer />
+    </Wrapper>
   )
 }
+
+const Home = styled(PostMain, {
+  alignItems: 'center',
+  display: 'flex',
+  margin: '0 auto',
+  '@bp2': { width: 800 },
+})

@@ -1,41 +1,96 @@
-import { currentDayName } from '@/lib/utils/dateUtils'
-import Link from './Link'
-import NowPlayingFooter from './NowPlayingFooter'
+import Link from 'next/link'
+import { styled } from '../stitches.config'
 
 export default function Footer() {
-  return (
-    <footer>
-      <div className="mt-10 flex flex-col items-center">
-        <div className="">
-          <NowPlayingFooter />
-        </div>
-        <div className="mb-2 hidden text-sm text-gray-500 dark:text-gray-400 md:flex">
-          <div className="mx-1">
-            <Link href="https://abhinavprkash.vercel.app" className="link-underline">
-              Abhinav Prakash{` © ${new Date().getFullYear()}`}
-            </Link>
-          </div>
-          {`•`}
-          <div className="mx-1">
-            <Link href="https://qod.shakiltech.com/" className="link-underline">
-              Have a good {currentDayName()}!
-            </Link>
-          </div>
-          {`•`}
-          <div className="mx-1">
-            <Link href="/contact" className="link-underline">
-              Contact
-            </Link>
-          </div>
-        </div>
-        <div className="mb-2 text-sm text-gray-500 dark:text-gray-400 sm:block md:hidden lg:hidden">
-          <div className="mx-1">
-            <Link href="https://parthdesai.vercel.app" className="link-underline">
-              Parth{` © ${new Date().getFullYear()}`}
-            </Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  )
+  const links = [
+    {
+      title: 'Email',
+      url: 'mailto:abhinav.prakash@usc.edu',
+      icon: 'ri-mail-line',
+    },
+    {
+      title: 'Twitter',
+      url: 'https://x.com/abhinaprkash',
+      icon: 'ri-twitter-line',
+    },
+    {
+      title: 'GitHub',
+      url: 'https://github.com/abhinavprkash',
+      icon: 'ri-github-line',
+    },
+    {
+      title: 'linkedin',
+      url: 'https://www.linkedin.com/in/itsmeabhinavprakash/',
+      icon: 'ri-linkedin-line',
+    },
+    {
+      title: 'Medium',
+      url: 'https://medium.com/@compilex',
+      icon: 'ri-medium-line',
+    },
+  ]
+
+  const renderAnchor = (link, index) => {
+    if (link.url.startsWith('http')) {
+      return (
+        <Anchor key={index} href={link.url} target="_blank">
+          <Title>{link.title}</Title>
+          <Icon className={link.icon} />
+        </Anchor>
+      )
+    }
+
+    return (
+      <Link key={index} href={link.url} passHref>
+        <Anchor>
+          <Title>{link.title}</Title>
+          <Icon className={link.icon} />
+        </Anchor>
+      </Link>
+    )
+  }
+
+  return <Container>{links.map(renderAnchor)}</Container>
 }
+
+const Container = styled('footer', {
+  background: '$background',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '20px 0',
+})
+
+const Icon = styled('i', {
+  color: '$primary',
+  opacity: 1,
+  marginLeft: '5px',
+  marginTop: '1px',
+  fontSize: '24px',
+  '@bp2': { opacity: 0, fontSize: '16px' },
+})
+
+const Anchor = styled('a', {
+  color: '$secondary',
+  display: 'flex',
+  fontSize: '15px',
+  border: 0,
+  marginLeft: '20px',
+  textDecoration: 'none',
+  textTransform: 'lowercase',
+  transition: 'color $duration ease-in-out',
+  '&:hover, &:focus': {
+    color: '$primary',
+    opacity: 1,
+  },
+  [`&:hover ${Icon}`]: {
+    transition: 'opacity $duration ease-in-out',
+    opacity: 1,
+  },
+  '&:first-child': { margin: '0' },
+})
+
+const Title = styled('span', {
+  display: 'none',
+  '@bp2': { display: 'block' },
+})
