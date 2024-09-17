@@ -11,7 +11,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: 'Abhinav Prakash',
-      description: 'Software Engineer, Yup I know we are building our replacement.',
+      description: 'Earlier Worked at Optum, Uniqode and Samsung, Now, I am working on building my replacement, Dont tell anyone 🤫.',
     },
   }
 }
@@ -43,8 +43,8 @@ export default function Index(props) {
             <div>
               <h1>{title}</h1>
               <p>
-                <strong>Ex-Software Engineer at{' '}
-                  <a href="https://optum.com" target="blank">Optum</a>
+               <strong>Master's in Computer Science at{' '}
+                  <a href="https://usc.edu" target="blank">University of Southern California</a>
                 </strong><br />
                 {description}
               </p>
