@@ -72,7 +72,7 @@ const items = [
   {
     jobTitle: 'Software Engineer Intern',
     company: 'StackPro',
-    companyUrl: 'https://www.stackpro.com',
+    companyUrl: 'https://www.stackpro.in',
     startDate: '2022-01-01',
     endDate: '2022-03-31',
     location: 'Bangalore Urban, Karnataka, India',
