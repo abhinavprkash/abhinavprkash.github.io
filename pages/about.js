@@ -55,7 +55,7 @@ function About(props) {
             }}
           >
             <strong>Hey, I'm Abhinav Prakash</strong>
-            <Pronunciation />I started my journey as a Software Engineer back in
+            I started my journey as a Software Engineer back in
             2023 at Optum.
           </Paragraph>
           <Paragraph>
