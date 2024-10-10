@@ -5,7 +5,7 @@ const items = [
       {
         title: 'ProfEssence-AI',
         description: 'ProfEssence-AI is a personalized course Advisor',
-        url: 'https://github.com/pycoder2000/GRE-Prep-Tool',
+        url: 'https://github.com/abhinavprkash/ProfEssence-AI',
         active: true,
         icon: 'gre-prep',
         stats: '',
