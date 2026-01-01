@@ -1,5 +1,31 @@
 const items = [
   {
+    jobTitle: 'Software Engineer Intern',
+    company: 'Adobe',
+    companyUrl: 'https://www.adobe.com',
+    startDate: '2025-05-01',
+    endDate: '2025-08-31',
+    location: 'San Jose, CA',
+    description: [
+      'Bootstrapped 500 ticket ground truth, grounded GPT prompts with component definitions and Jira retrieval, shipped auto routing with logged rationales, improved first try assignment from 66% to 92.6%, and automated over 90% of manual triage.',
+      'Extracted structured timeline events from Jira comments and changelogs, built a business hours SLA calculator and bottleneck detection, and reduced manual timeline reconstruction by about 80% while trimming long tail resolution time by about 25%.',
+      'Built and deployed a policy aware auto closure bot integrated with Jira using inactivity timers, working hours safety rails, and escalation skip logic, raising SLA on time to about 95% and closing more than 1,000 stalled tickets in the first month.',
+      'Designed the Agent Nexus context layer with multi tenant Jira ingestion and indexes for similarity and bounded chunks. Shipped retrieval APIs delivering 10 to 50 ms similarity and 100 to 200 ms lookups, plus audit for retraining cycles.',
+    ],
+  },
+  {
+    jobTitle: 'Graduate AI Engineer',
+    company: 'University of Southern California',
+    companyUrl: 'https://www.usc.edu',
+    startDate: '2024-12-01',
+    endDate: '2025-05-01',
+    location: 'Los Angeles, CA',
+    description: [
+      'Designed and deployed StudentOfAI using Flask, Next.js, MongoDB, and AWS, integrated OpenAI APIs to process real time news and generate dynamic AI learning roadmaps with personalized content aggregation.',
+      'Built ETL pipelines and REST microservices with FastAPI and Python, deployed summarization agents via GCP Cloud Functions and integrated Whisper for interactive content workflows.',
+    ],
+  },
+  {
     jobTitle: 'Teaching Assistant',
     company: 'University of Southern California',
     companyUrl: 'https://www.usc.edu',

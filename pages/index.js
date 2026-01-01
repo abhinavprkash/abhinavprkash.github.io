@@ -11,7 +11,7 @@ export async function getStaticProps() {
   return {
     props: {
       title: 'Abhinav Prakash',
-      description: 'Earlier Worked at Optum, Uniqode and Samsung, Now, I am working on building my replacement, Dont tell anyone 🤫.',
+      description: 'Recently interned at Adobe, previously worked at Optum, Uniqode and Samsung. Now, I am working on building my replacement, Dont tell anyone 🤫.',
     },
   }
 }
@@ -70,7 +70,7 @@ export default function Index(props) {
   <div style={{ flex: '1', textAlign: 'left' }}>
     <h1>{title}</h1>
     <p>
-      <strong>Master's in Computer Science at{' '}
+      <strong>Master's in Computer Science from{' '}
         <a href="https://usc.edu" target="_blank">University of Southern California</a>
       </strong><br />
       {description}

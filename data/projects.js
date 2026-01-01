@@ -1,5 +1,48 @@
 const items = [
   {
+    year: '2025',
+    projects: [
+      {
+        title: 'Learning Benchmark',
+        description: 'A stateful tool use benchmark with CRM environment and unified tool layer (38 tools)',
+        url: 'https://github.com/abhinavprkash/Learning-Benchmark',
+        active: true,
+        icon: 'projects',
+        stats: '1,200+ multi-turn conversations',
+      },
+      {
+        title: 'Smart Tab',
+        description: 'Chrome extension that auto-groups tabs using OpenAI APIs for smart labels and semantic search',
+        url: 'https://github.com/abhinavprkash/Smart-Tab',
+        active: true,
+        icon: 'source',
+        stats: '',
+      },
+      {
+        title: 'Sample Language Model',
+        description: 'Fine-tuned cross-lingual transformer models for Hinglish fluency using LoRA and QLoRA',
+        url: 'https://github.com/abhinavprkash/Sample-Language-Model',
+        active: true,
+        icon: 'langbase',
+        stats: '87% user preference rate',
+      },
+      {
+        title: 'AutoJigsaw',
+        description: 'End-to-end computer vision jigsaw reconstruction system with contour-based piece extraction',
+        url: 'https://github.com/abhinavprkash/AutoJigsaw',
+        active: false,
+        stats: '',
+      },
+      {
+        title: 'Gist AI',
+        description: 'Chrome extension for inclusive web interaction with RAG-style information delivery',
+        url: 'https://github.com/abhinavprkash/Gist-AI',
+        active: false,
+        stats: '',
+      },
+    ],
+  },
+  {
     year: '2024',
     projects: [
       {
