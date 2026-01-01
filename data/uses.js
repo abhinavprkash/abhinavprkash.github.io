@@ -20,13 +20,33 @@ const categories = [
     items: [
       {
         title: 'VSCode',
-        description: "The first and last code editor I'll ever use.",
+        description: "The code editor that started it all for me.",
         url: 'https://code.visualstudio.com',
       },
       {
         title: 'Raycast',
         description: 'The best productivity app for Mac. Do give this a try.',
         url: 'https://www.raycast.com/',
+      },
+    ],
+  },
+  {
+    name: 'AI Tools',
+    items: [
+      {
+        title: 'Cursor',
+        description: 'AI-powered code editor that supercharges your development workflow.',
+        url: 'https://cursor.sh',
+      },
+      {
+        title: 'Claude Code',
+        description: 'An agentic coding tool that lives in your terminal.',
+        url: 'https://www.anthropic.com/claude-code',
+      },
+      {
+        title: 'antigravity',
+        description: 'AI-powered tool that helps you code faster.',
+        url: 'https://antigravity.dev',
       },
     ],
   },
