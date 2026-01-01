@@ -15,7 +15,7 @@ export async function getStaticProps() {
   const meta = {
     title: 'About // Abhinav Prakash',
     description:
-      'I am a dedicated Software Engineer with a strong foundation in full-stack development, cloud platforms, and data-driven solutions. Having led key projects at Optum, I’ve architected automation tools using Java Spring Boot, MongoDB, and MySQL. I’ve also developed scalable data migration pipelines at Uniqode using AWS Glue and Athena for reporting automation. Currently pursuing a Master’s in Computer Science at USC, I specialize in crafting high-performance applications using Python, JavaScript, and cloud-native technologies. I am eager to bring my expertise to drive impactful solutions within your team.',
+      "I am a Software Engineer who transitioned from backend development to AI/ML engineering. At Adobe, I built AI-powered systems for intelligent ticket routing and workflow automation, which deepened my passion for solving complex problems with LLMs and retrieval systems. My journey started with backend and data engineering at Optum, Uniqode, and Samsung, where I developed scalable tools and pipelines that shaped my engineering fundamentals. I hold a Master's in Computer Science from USC and love building high-performance AI applications using Python, LLMs, and cloud-native technologies.",
     tagline: 'Build. Code. Deliver.',
     image: '/static/images/about-bw.jpg',
     primaryColor: 'pink',
@@ -60,8 +60,8 @@ function About(props) {
           </Paragraph>
           <Paragraph>
             I'm originally from India and currently living in{' '}
-            <strong>Los Angeles, California</strong> pursuing my Masters in
-            Computer Science.
+            <strong>Los Angeles, California</strong>. I recently graduated with my Masters in
+            Computer Science from USC.
           </Paragraph>
           <Paragraph>
             I love{' '}

@@ -24,9 +24,9 @@ export async function getStaticProps() {
 function Work(props) {
   const renderFeatured = () => {
     const featured = [
+      { jobTitle: 'Software Engineer Intern', company: 'Adobe' },
+      { jobTitle: 'Graduate AI Engineer', company: 'University of Southern California' },
       { jobTitle: 'Software Engineer', company: 'Optum' },
-      { jobTitle: 'Software Engineer Intern', company: 'Uniqode' },
-      { jobTitle: 'Software Engineer Intern', company: 'Bytelearn' },
     ]
 
     return items

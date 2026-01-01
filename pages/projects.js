@@ -21,7 +21,7 @@ export async function getStaticProps() {
 
 function Projects(props) {
   const renderFeatured = () => {
-    const featured = ['ProfEssence-AI', 'Stock Ticker App', 'IT Ticket Prediction']
+    const featured = ['Learning Benchmark', 'Smart Tab', 'Sample Language Model']
 
     return items
       .map(item => {
