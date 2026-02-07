@@ -16,10 +16,42 @@ export async function getStaticProps() {
     secondaryColor: 'pink',
   }
 
-  return { props: meta }
+  const githubData = {}
+  const repos = items
+    .flatMap(item => item.projects)
+    .filter(project => project.github)
+
+  await Promise.all(
+    repos.map(async project => {
+      try {
+        const res = await fetch(
+          `https://api.github.com/repos/${project.github}`,
+          {
+            headers: {
+              Accept: 'application/vnd.github.v3+json',
+            },
+          }
+        )
+        if (res.ok) {
+          const data = await res.json()
+          githubData[project.github] = {
+            stars: data.stargazers_count,
+            language: data.language,
+            description: data.description,
+          }
+        }
+      } catch (e) {
+        // Gracefully skip if GitHub API is unavailable
+      }
+    })
+  )
+
+  return { props: { ...meta, githubData } }
 }
 
 function Hackathons(props) {
+  const { githubData = {} } = props
+
   const renderFeatured = () => {
     const featured = ['MetaPitch', 'ragebAIt', 'ThreadPilot']
 
@@ -30,7 +62,14 @@ function Hackathons(props) {
       .filter(item => item.length > 0)
       .flat()
       .map((item, index) => {
-        return <FeaturedProject key={index} project={item} />
+        const gh = item.github && githubData[item.github]
+        const statsParts = []
+        if (gh && gh.language) statsParts.push(gh.language)
+        if (gh && gh.stars) statsParts.push(`⭐ ${gh.stars}`)
+        const project = statsParts.length > 0
+          ? { ...item, stats: statsParts.join(' · ') }
+          : item
+        return <FeaturedProject key={index} project={project} />
       })
   }
 
@@ -41,7 +80,8 @@ function Hackathons(props) {
           <h3>{item.year}</h3>
           <ul>
             {item.projects.map((project, pIndex) => {
-              return <HackathonItem key={pIndex} project={project} />
+              const gh = project.github && githubData[project.github]
+              return <HackathonItem key={pIndex} project={project} gh={gh} />
             })}
           </ul>
         </div>
@@ -87,7 +127,7 @@ function Hackathons(props) {
 }
 
 function HackathonItem(props) {
-  const { project } = props
+  const { project, gh } = props
 
   return (
     <li>
@@ -95,6 +135,8 @@ function HackathonItem(props) {
         {project.title}
       </a>
       {project.event && <span> — {project.event}</span>}
+      {gh && gh.language && <span> · {gh.language}</span>}
+      {gh && gh.stars > 0 && <span> · ⭐ {gh.stars}</span>}
     </li>
   )
 }
