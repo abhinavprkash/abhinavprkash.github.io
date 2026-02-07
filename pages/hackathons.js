@@ -27,11 +27,7 @@ function Hackathons(props) {
       .map(item => {
         return item.projects.filter(project => featured.includes(project.title))
       })
-      .filter(item => {
-        if (item.length > 0) {
-          return item
-        }
-      })
+      .filter(item => item.length > 0)
       .flat()
       .map((item, index) => {
         return <FeaturedProject key={index} project={item} />
@@ -95,7 +91,7 @@ function HackathonItem(props) {
 
   return (
     <li>
-      <a href={project.url} target="_blank">
+      <a href={project.url} target="_blank" rel="noopener noreferrer">
         {project.title}
       </a>
       {project.event && <span> — {project.event}</span>}
