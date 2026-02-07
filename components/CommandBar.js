@@ -17,6 +17,7 @@ import creditsIcon from '../public/static/icons/credits.json'
 import emailIcon from '../public/static/icons/email.json'
 import homeIcon from '../public/static/icons/home.json'
 import projectsIcon from '../public/static/icons/projects.json'
+import hackathonsIcon from '../public/static/icons/projects.json'
 import sourceIcon from '../public/static/icons/source.json'
 import usesIcon from '../public/static/icons/uses.json'
 import tweetsIcon from '../public/static/icons/tweets.json'
@@ -33,6 +34,7 @@ export default function CommandBar(props) {
   const aboutRef = useRef()
   const articlesRef = useRef()
   const projectsRef = useRef()
+  const hackathonsRef = useRef()
   const workRef = useRef()
   const podcastsRef = useRef()
   const investingRef = useRef()
@@ -166,6 +168,23 @@ export default function CommandBar(props) {
           lottieRef={projectsRef}
           style={iconSize}
           animationData={projectsIcon}
+          loop={false}
+          autoplay={false}
+        />
+      ),
+    },
+    {
+      id: 'hackathons',
+      name: 'Hackathons',
+      shortcut: ['g', 'k'],
+      keywords: 'go-hackathons',
+      section: 'Go To',
+      perform: () => router.push('/hackathons'),
+      icon: (
+        <Lottie
+          lottieRef={hackathonsRef}
+          style={iconSize}
+          animationData={hackathonsIcon}
           loop={false}
           autoplay={false}
         />
